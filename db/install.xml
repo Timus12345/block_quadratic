@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="blocks/quadratic/db" VERSION="2025072500" COMMENT="Install file for quadratic block">
+
+    <TABLE NAME="block_quadratic_history" COMMENT="Stores quadratic equation solutions">
+        <FIELDS>
+            <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" COMMENT="Primary key"/>
+            <FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="true" COMMENT="User ID"/>
+            <FIELD NAME="a" TYPE="float" NOTNULL="true" COMMENT="Coefficient a"/>
+            <FIELD NAME="b" TYPE="float" NOTNULL="true" COMMENT="Coefficient b"/>
+            <FIELD NAME="c" TYPE="float" NOTNULL="true" COMMENT="Coefficient c"/>
+            <FIELD NAME="result" TYPE="text" NOTNULL="true" COMMENT="Solution result"/>
+            <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" COMMENT="Timestamp"/>
+        </FIELDS>
+        <KEYS>
+            <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+            <KEY NAME="userid" TYPE="foreign" FIELDS="userid" REFTABLE="user" REFFIELDS="id"/>
+        </KEYS>
+    </TABLE>
+
+</XMLDB>
