@@ -61,7 +61,7 @@ class block_quadratic extends block_base {
             $record->a = $a;
             $record->b = $b;
             $record->c = $c;
-            $record->solution = $result;
+            $record->result = $result;
             
             $DB->insert_record('block_quadratic_history', $record);
         }

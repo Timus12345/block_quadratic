@@ -32,7 +32,7 @@ if ($records) {
         echo html_writer::tag('td', $record->a);
         echo html_writer::tag('td', $record->b);
         echo html_writer::tag('td', $record->c);
-        echo html_writer::tag('td', s($record->solution));
+        echo html_writer::tag('td', s($record->result));
         echo html_writer::tag('td', userdate($record->timecreated));
         echo html_writer::end_tag('tr');
     }
