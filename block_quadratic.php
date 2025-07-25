@@ -37,18 +37,22 @@ class block_quadratic extends block_base {
         
         // Если есть все коэффициенты то считаем корни
         if ($a !== null && $b !== null && $c !== null) {
-            $d = $b * $b - 4 * $a * $c;
-            $result = '';
-            
-            if ($d > 0) {
-                $x1 = (-$b + sqrt($d)) / (2 * $a);
-                $x2 = (-$b - sqrt($d)) / (2 * $a);
-                $result = "x1 = $x1, x2 = $x2";
-            } elseif ($d == 0) {
-                $x = -$b / (2 * $a);
-                $result = "x = $x";
+            if ($a == 0) {
+                $result = "Ошибка: коэффициент 'a' не может быть равен нулю.";
             } else {
-                $result = "Корней нет";
+                $d = $b * $b - 4 * $a * $c;
+                $result = '';
+
+                if ($d > 0) {
+                    $x1 = (-$b + sqrt($d)) / (2 * $a);
+                    $x2 = (-$b - sqrt($d)) / (2 * $a);
+                    $result = "x1 = $x1, x2 = $x2";
+                } elseif ($d == 0) {
+                    $x = -$b / (2 * $a);
+                    $result = "x = $x";
+                } else {
+                    $result = "Корней нет";
+                }
             }
             
             //Выводим результат
