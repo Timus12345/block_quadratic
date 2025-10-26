@@ -1,12 +1,15 @@
-version: '3.8'
+version: '3.9'
 
 services:
-  web:
+  app:
     build: .
+    container_name: block_quadratic_app
     ports:
       - "8080:80"
     volumes:
-      - app_data:/var/www/html/data
+      - ./app:/var/www/html
+      - data_volume:/var/www/html/data
+    restart: always
 
 volumes:
-  app_data:
+  data_volume:
